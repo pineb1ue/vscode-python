@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "vscode-python"
+version = "0.1.0"
+description = ""
+authors = ["Mamoru Matsunaga <pineb1ue10ngtree@gmail.com>"]
+readme = "README.md"
+packages = [{include = "vscode_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+black = "^23.3.0"
+ruff = "^0.0.272"
+isort = "^5.12.0"
+mypy = "^1.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.ruff]
+line-length = 120
+ignore = ["E203"]
+
+[mypy]
+disallow_untyped_defs = true
+ignore_missing_imports = true
