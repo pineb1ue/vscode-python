@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "vscode-python"
 version = "0.1.0"
-description = ""
+description = "A sample project for VSCode and Python development."
 authors = ["Mamoru Matsunaga <pineb1ue10ngtree@gmail.com>"]
 readme = "README.md"
 packages = [{include = "vscode_python"}]
@@ -9,14 +9,12 @@ packages = [{include = "vscode_python"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 
-
 [tool.poetry.group.dev.dependencies]
 black = "^23.11.0"
 ruff = "^0.1.6"
 isort = "^5.12.0"
 mypy = "^1.7.1"
 taskipy = "^1.12.2"
-
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.3"
@@ -50,6 +48,6 @@ ignore_missing_imports = true
 exclude = ["tests/**/*.py"]
 
 [tool.taskipy.tasks]
-format = {cmd = "poetry run black ./src", help = "run formatter"}
-lint = {cmd = "poetry run ruff ./src", help = "run linter"}
-ci = {cmd = "poetry run isort ./src && poetry run black ./src && poetry run ruff ./src && poetry run mypy ./src", help = "run all ci"}
+format = {cmd = "poetry run black ./src", help = "Run the formatter."}  # フォーマッタを実行
+lint = {cmd = "poetry run ruff ./src", help = "Run the linter."}  # リンタを実行
+ci = {cmd = "poetry run isort ./src && poetry run black ./src && poetry run ruff ./src && poetry run mypy ./src", help = "Run all CI tasks."}  # 全てのCIタスクを実行
