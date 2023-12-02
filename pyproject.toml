@@ -8,27 +8,42 @@ packages = [{include = "vscode_python"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-black = "^23.3.0"
-ruff = "^0.0.272"
-isort = "^5.12.0"
-mypy = "^1.3.0"
 
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+ruff = "^0.1.6"
+isort = "^5.12.0"
+mypy = "^1.7.1"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+pytest-mock = "^3.12.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.black]
+target-version = ["py310"]
 line-length = 120
 
 [tool.isort]
 profile = "black"
-line_length = 120
 
 [tool.ruff]
+target-version = "py310"
 line-length = 120
 ignore = ["E203"]
 
-[mypy]
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"**/{tests,docs,tools}/*" = ["E402"]
+
+[tool.mypy]
+warn_return_any = true
+warn_unused_configs = true
 disallow_untyped_defs = true
 ignore_missing_imports = true
+exclude = ["tests/**/*.py"]

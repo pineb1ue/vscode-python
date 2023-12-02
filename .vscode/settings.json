@@ -1,34 +1,17 @@
 {
-    // general
+    // python
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
     "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
+            "source.fixAll": false,
             "source.organizeImports": true
-        }
+        },
     },
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-    // linter
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": false,
-    "python.linting.ruffEnabled": true,
-    "python.linting.ruffArgs": [
-        "--max-line-length=120",
-        "--ignore=E203",
-    ],
-    "python.linting.mypyEnabled": true,
-    "python.linting.mypyArgs": [
-        "--disallow-untyped-defs",
-        "--ignore-missing-imports",
-    ],
-    "python.linting.ignorePatterns": [
-        "tests/**/*.py"
-    ],
-    "python.linting.lintOnSave": true,
-    // formatter
-    "python.formatting.provider": "black",
-    "python.formatting.blackArgs": [
-        "--line-length=120",
-    ],
-    // others
+    "black-formatter.args": ["--config=${workspaceFolder}/pyproject.toml"],
+    "ruff.organizeImports": false,
+    "ruff.lint.args": ["--config=${workspaceFolder}/pyproject.toml"],
+    "mypy-type-checker.args": ["--config-file=${workspaceFolder}/pyproject.toml"],
     "autoDocstring.docstringFormat": "numpy"
 }
