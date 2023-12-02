@@ -28,6 +28,9 @@
 - [ ] pytest
   - [ ] pytest-mockを使ったサンプルを用意
   - [ ] fixture関連
-- [ ] DDDのサンプルを用意
+- [ ] sphinx
+- [ ] jupyter notebookの設定
+- [ ] DDDのサンプルを用意 (別リポジトリに作成)
   - [ ] インターフェース
   - [ ] DI
+- [ ] FastAPIのサンプルを用意 (別リポジトリに作成)
