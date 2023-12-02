@@ -21,3 +21,13 @@
 - [taskipy](https://github.com/taskipy/taskipy)
   - poetryのscriptsにはタスクランナー機能はないので, 代わりに`taskipy`を使用
   - `poetry run task [test]`
+
+
+## Future Tasks
+
+- [ ] pytest
+  - [ ] pytest-mockを使ったサンプルを用意
+  - [ ] fixture関連
+- [ ] DDDのサンプルを用意
+  - [ ] インターフェース
+  - [ ] DI
