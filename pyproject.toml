@@ -45,9 +45,9 @@ warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
 ignore_missing_imports = true
-exclude = ["tests/**/*.py"]
+exclude = ["^tests/[^/]+\\.py$"]  # tests/**/*.pyのみ除外
 
 [tool.taskipy.tasks]
-format = {cmd = "poetry run black ./src", help = "Run the formatter."}  # フォーマッタを実行
-lint = {cmd = "poetry run ruff ./src", help = "Run the linter."}  # リンタを実行
-ci = {cmd = "poetry run isort ./src && poetry run black ./src && poetry run ruff ./src && poetry run mypy ./src", help = "Run all CI tasks."}  # 全てのCIタスクを実行
+format = {cmd = "poetry run isort . && poetry run black .", help = "Run the formatter."}  # フォーマッタを実行
+lint = {cmd = "poetry run ruff . && poetry run mypy .", help = "Run the linter."}  # リンタを実行
+ci = {cmd = "poetry run isort . && poetry run black . && poetry run ruff . && poetry run mypy .", help = "Run all CI tasks."}  # 全てのCIタスクを実行
